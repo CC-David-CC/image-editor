@@ -1,0 +1,4 @@
+.image-editor-content{display:flex;flex-direction:column;min-height:0;background:#fff;overflow:hidden}
+.image-editor-stage{flex:1;min-height:0;position:relative}
+.image-editor-welcome{padding:24px}
+.image-editor-welcome button{padding:8px 12px}
