@@ -2,3 +2,5 @@
 .image-editor-stage{flex:1;min-height:0;position:relative}
 .image-editor-welcome{padding:24px}
 .image-editor-welcome button{padding:8px 12px}
+
+.image-editor-content>button,.image-editor-welcome button{min-height:44px;padding:.45rem .75rem;align-self:flex-start}
