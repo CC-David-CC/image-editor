@@ -4,3 +4,5 @@
 .image-editor-welcome button{padding:8px 12px}
 
 .image-editor-content>button,.image-editor-welcome button{min-height:44px;padding:.45rem .75rem;align-self:flex-start}
+
+.image-editor-bar,.image-editor-copy{display:flex;flex-wrap:wrap;gap:6px;padding:4px}.image-editor-bar button,.image-editor-copy button{min-height:44px;padding:.45rem .75rem}.image-editor-copy input{flex:1;min-width:10rem}
