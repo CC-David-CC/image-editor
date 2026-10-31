@@ -16,3 +16,5 @@ Run `npm ci --prefix apps/system/image-editor --ignore-scripts` before the
 public app builder. Generated dependencies and output are not tracked.
 
 Local desktop, phone-sized and 4K-sized, and live desktop and phone-sized tests use two accounts in one browser and delay an image save across an account switch; the old save changes neither account’s file. Physical-device touch is not covered.
+
+A separate notice remains visible if My files detects that the open image changed, is unavailable, or has conflicting copies. The current image and edits remain open; resolve conflicts in Files or save a copy. A save that lands in conflict reports that it is saved locally and needs resolution rather than claiming server sync. Detection depends on My files synchronization. Local desktop, emulated-phone and 4K and live emulated-phone account tests cover conflicts before and during saves and fresh-session recovery.

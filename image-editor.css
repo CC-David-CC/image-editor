@@ -6,3 +6,5 @@
 .image-editor-content>button,.image-editor-welcome button{min-height:44px;padding:.45rem .75rem;align-self:flex-start}
 
 .image-editor-bar,.image-editor-copy{display:flex;flex-wrap:wrap;gap:6px;padding:4px}.image-editor-bar button,.image-editor-copy button{min-height:44px;padding:.45rem .75rem}.image-editor-copy input{flex:1;min-width:10rem}
+
+.image-editor-file-warning{margin:6px 0;padding:6px 8px;border-left:4px solid #a65300;background:#fff1d6;color:#4d2900}
