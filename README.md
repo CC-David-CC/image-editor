@@ -14,3 +14,5 @@ not supported.
 
 Run `npm ci --prefix apps/system/image-editor --ignore-scripts` before the
 public app builder. Generated dependencies and output are not tracked.
+
+Local desktop, phone-sized and 4K-sized, and live desktop and phone-sized tests use two accounts in one browser and delay an image save across an account switch; the old save changes neither account’s file. Physical-device touch is not covered.
