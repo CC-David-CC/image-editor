@@ -102,3 +102,9 @@ image clears the retry target. Local registered-account desktop and emulated-pho
 tests covered cancellation, retry, real resize/save, server sync, reopen and a
 separate scratch save that preserved the original. Physical touch and other
 failure types remain unverified.
+
+Saving a PNG or WebP as JPEG asks before converting: JPEG uses lossy compression
+and cannot retain transparency. Cancel leaves the image and destination file
+untouched. If the image or destination changes while the question is open,
+the app asks the user to start the save again. Existing JPEG saves do not ask
+for this conversion confirmation.
