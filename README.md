@@ -34,3 +34,8 @@ The editor also asks before closing while Save or Save As is in
 progress, even if the image was clean when the save began. A cancelled or failed
 save restores the previous clean state unless a newer edit occurred. An
 already-dispatched file write may still finish after the window closes.
+
+The local candidate updates the window's restore reference when opening or
+saving an image, and clears it when creating a new blank image. An unsaved blank
+is not preserved on refresh; save it first. The earlier saved image is not
+reopened in its place.
