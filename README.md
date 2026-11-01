@@ -18,6 +18,18 @@ Before decoding, the editor checks that the image signature matches its PNG,
 JPEG or WebP filename. A mismatch is rejected and the current image stays open;
 the browser still validates the full image when it decodes it.
 
+Saving re-encodes pixels and can discard embedded metadata. When common PNG
+text, EXIF, ICC, color, resolution or time chunks; JPEG APP1, APP2, APP13 or
+comment segments; or WebP EXIF, XMP or ICC chunks are detected, the editor
+warns before Save or Save As. Cancel preserves the file; Save As with a
+different name keeps the original. This detector does not recognize every
+metadata variant and the exported copy does not preserve the detected metadata.
+Local desktop and phone-sized account tests preserved a PNG original with a
+text chunk, checked opaque and transparent pixels in a saved copy, synced and
+reopened it. A separate SVG Editor → PNG → Image Editor resize/save workflow
+checked colored pixels, sync and fresh-browser reopen on both viewport sizes.
+Physical touch and all metadata and color-profile behavior remain unverified.
+
 Run `npm ci --prefix apps/system/image-editor --ignore-scripts` before the
 public app builder. Generated dependencies and output are not tracked.
 
