@@ -39,3 +39,8 @@ The app updates the window's restore reference when opening or
 saving an image, and clears it when creating a new blank image. An unsaved blank
 is not preserved on refresh; save it first. The earlier saved image is not
 reopened in its place.
+
+Focused Ctrl/Command+S uses the image Save action. For immediate resize/save,
+the app waits one event turn and snapshots the current editor state; local
+desktop and emulated-phone checks verified saved dimensions. Other tools,
+physical touch and Mac shortcuts remain unverified.
