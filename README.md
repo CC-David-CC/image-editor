@@ -20,3 +20,8 @@ Local desktop, phone-sized and 4K-sized, and live desktop and phone-sized tests 
 A separate notice remains visible if My files detects that the open image changed, is unavailable, or has conflicting copies. The current image and edits remain open; resolve conflicts in Files or save a copy. A save that lands in conflict reports that it is saved locally and needs resolution rather than claiming server sync. Detection depends on My files synchronization. Local desktop, emulated-phone and 4K and live emulated-phone account tests cover conflicts before and during saves and fresh-session recovery.
 
 **New blank image** creates a white 800 × 600 PNG canvas in the browser. It is unsaved until saved to My files; the default name is `/Untitled.png`, and an existing file is protected. Use Save As for another name or folder. Starting another blank image asks before discarding unsaved edits. Local desktop, emulated-phone and 4K and live emulated-phone account tests cover the close warning, name collision, resize, save, sync and fresh-session reopen.
+
+Open, New and Save As use desktop confirmations. The editor waits for pending
+edit notifications before checking unsaved work, and checks again after a
+confirmation so newer edits are not discarded. An image changed during a
+replacement confirmation is protected by its file version.
