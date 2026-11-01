@@ -30,7 +30,7 @@ edit notifications before checking unsaved work, and checks again after a
 confirmation so newer edits are not discarded. An image changed during a
 replacement confirmation is protected by its file version.
 
-The local candidate also asks before closing while Save or Save As is in
+The editor also asks before closing while Save or Save As is in
 progress, even if the image was clean when the save began. A cancelled or failed
 save restores the previous clean state unless a newer edit occurred. An
 already-dispatched file write may still finish after the window closes.
