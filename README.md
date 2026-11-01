@@ -9,8 +9,10 @@ built-in download is suppressed; the user saves to account files instead.
 Use **File → Open from My files** to select an image. An image that cannot be opened
 leaves the current edits available. Save updates the opened file. **Save As**
 in the File menu chooses a separate PNG, JPEG or WebP path in My files and asks before replacing
-an existing file; subsequent saves update the new file. Change monitoring and Save As collision checks use file metadata without rereading image bytes. Animated GIF editing is
-not supported.
+an existing file; subsequent saves update the new file. Change monitoring and Save As collision checks use file metadata without rereading image bytes. Animated GIF, APNG and animated WebP editing is
+not supported. Animated PNG and WebP files are rejected before the editor
+decodes them, protecting their frames from a still-image save; other currently
+open edits remain intact.
 
 Run `npm ci --prefix apps/system/image-editor --ignore-scripts` before the
 public app builder. Generated dependencies and output are not tracked.
