@@ -74,3 +74,9 @@ no longer associated with the welcome screen. The original file is untouched;
 choose another image or create a blank one. Local desktop and emulated-phone
 account tests cover invalid/missing images, creating and saving a blank image,
 server synchronization and refresh. Physical touch remains unverified.
+
+When Save As targets an existing filename, the editor checks the existing
+version before and after replacement confirmation. This includes a new blank
+image replacing an existing `/Untitled.png`; cancelling or an intervening edit
+preserves that file. Local desktop and emulated-phone account tests cover these
+cases, successful replacement and server sync. Physical touch remains unverified.
