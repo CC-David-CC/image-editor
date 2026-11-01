@@ -50,3 +50,21 @@ Focused Ctrl/Command+S uses the image Save action. For immediate resize/save,
 the app waits one event turn and snapshots the current editor state; local
 desktop and emulated-phone checks verified saved dimensions. Other tools,
 physical touch and Mac shortcuts remain unverified.
+
+
+Watermark → Add watermark → **Choose watermark from My files** selects a PNG,
+JPEG or WebP already on the account drive. **File → Choose annotation image
+from My files** prepares one image for Annotate → Image → Add image → From
+gallery. Select its thumbnail and tap outside the gallery before saving; the
+upstream gallery overlay otherwise covers Save. The gallery is temporary for
+the current image, while saving the edited image embeds the visible overlay.
+The separate Annotate → Image → Upload image action still opens the computer
+file picker; it is retained for computer uploads. Animated overlays are not
+supported. Local desktop and emulated-phone tests cover both My files paths,
+image validation, saved pixel content and server sync, and observed no external
+requests in those flows. Physical touch, all image formats and very large
+overlays remain unverified.
+
+No third-party account or cloud feature was removed in this review. The native
+computer-upload path for annotations remains; direct My files annotation
+insertion without the intermediate gallery is a future usability improvement.
