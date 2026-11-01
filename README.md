@@ -14,6 +14,10 @@ not supported. Animated PNG and WebP files are rejected before the editor
 decodes them, protecting their frames from a still-image save; other currently
 open edits remain intact.
 
+Before decoding, the editor checks that the image signature matches its PNG,
+JPEG or WebP filename. A mismatch is rejected and the current image stays open;
+the browser still validates the full image when it decodes it.
+
 Run `npm ci --prefix apps/system/image-editor --ignore-scripts` before the
 public app builder. Generated dependencies and output are not tracked.
 
