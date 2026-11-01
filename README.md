@@ -137,12 +137,14 @@ and emulated-phone sizes. Physical touch is not verified.
 Saving an already saved image with no edits leaves its bytes unchanged and
 checks its local mirror version and conflicts, then reports that there are no
 unsaved changes. Edits arriving during the check go through the normal save.
-This avoids an unnecessary lossy
-JPEG/WebP re-encode and preserves its metadata. Save As still creates an
-encoded copy, even with no edits; it can lose metadata and lossy formats can
-change pixels. A registered-account test on desktop and an emulated phone
-checks an unchanged JPEG's local and server hashes, then resizes and saves it
-immediately, checks pixels and dimensions, syncs and reopens in a fresh session.
+This avoids an unnecessary lossy JPEG/WebP re-encode and preserves metadata.
+Save As also copies the exact bytes when the image is unchanged and the output
+format is the same. It verifies the opened file's local version and conflict
+state and refuses a stale copy if an edit arrives while the source is being
+read. Edits and format conversions still re-encode, which can change lossy
+pixels or remove metadata. Registered-account desktop and emulated-phone tests
+cover exact JPEG, PNG and WebP copies, PNG transparency and metadata, source
+conflicts, edits during a held read, server sync and fresh-session reopen.
 An immediate first Save produced an upstream Filerobot `attrs` error in one
 concurrent test; a rerun alone passed. The toolbar now invokes the host Save
 directly, avoiding Filerobot’s earlier unguarded pre-save snapshot. Desktop
