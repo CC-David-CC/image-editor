@@ -87,3 +87,9 @@ Save offers a version-checked replacement confirmation. Cancelling or changing
 that target during confirmation leaves the original untouched. Local desktop
 and emulated-phone account tests cover cancellation, concurrent modification,
 confirmed replacement, server sync and refresh. Physical touch is unverified.
+
+The Save As folder chooser ignores a late selection if the image or proposed
+filename changed while it was open; choose the folder again in that case. Only
+one chooser can run at a time. Local desktop and emulated-phone account tests
+cover a stale filename, a valid folder choice, server synchronization and
+reopening the saved image in a fresh session. Physical touch remains unverified.
