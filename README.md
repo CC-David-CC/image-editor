@@ -108,3 +108,9 @@ and cannot retain transparency. Cancel leaves the image and destination file
 untouched. If the image or destination changes while the question is open,
 the app asks the user to start the save again. Existing JPEG saves do not ask
 for this conversion confirmation.
+
+The welcome screen includes an optional **How to get started** guide covering
+opening or creating an image, basic editing, saving a copy and uploading via
+Files. It does not open a dialog or cover the editor after a file is opened.
+Local account tests check the guide and blank-image save/sync/reopen at desktop
+and emulated-phone sizes. Physical touch is not verified.
