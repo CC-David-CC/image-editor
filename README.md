@@ -80,3 +80,9 @@ version before and after replacement confirmation. This includes a new blank
 image replacing an existing `/Untitled.png`; cancelling or an intervening edit
 preserves that file. Local desktop and emulated-phone account tests cover these
 cases, successful replacement and server sync. Physical touch remains unverified.
+
+A new blank image uses `/Untitled.png`; if that file already exists, ordinary
+Save offers a version-checked replacement confirmation. Cancelling or changing
+that target during confirmation leaves the original untouched. Local desktop
+and emulated-phone account tests cover cancellation, concurrent modification,
+confirmed replacement, server sync and refresh. Physical touch is unverified.
