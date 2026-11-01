@@ -133,3 +133,21 @@ opening or creating an image, basic editing, saving a copy and uploading via
 Files. It does not open a dialog or cover the editor after a file is opened.
 Local account tests check the guide and blank-image save/sync/reopen at desktop
 and emulated-phone sizes. Physical touch is not verified.
+
+Saving an already saved image with no edits leaves its bytes unchanged and
+checks its local mirror version and conflicts, then reports that there are no
+unsaved changes. Edits arriving during the check go through the normal save.
+This avoids an unnecessary lossy
+JPEG/WebP re-encode and preserves its metadata. Save As still creates an
+encoded copy, even with no edits; it can lose metadata and lossy formats can
+change pixels. A registered-account test on desktop and an emulated phone
+checks an unchanged JPEG's local and server hashes, then resizes and saves it
+immediately, checks pixels and dimensions, syncs and reopens in a fresh session.
+An immediate first Save produced an upstream Filerobot `attrs` error in one
+concurrent test; a rerun alone passed. The toolbar now invokes the host Save
+directly, avoiding Filerobot’s earlier unguarded pre-save snapshot. Desktop
+and phone-sized tests held the image load, forced an early Save, verified that
+work remained unsaved, and saved successfully after loading. On the old build,
+the same held-load experiment did not reproduce the error because its Save
+control was disabled; the original narrower race was not reproduced in isolation.
+Physical phone behavior and every editing operation remain unverified.

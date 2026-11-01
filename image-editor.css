@@ -14,3 +14,5 @@
 .image-editor-file-fallback{align-self:flex-start}
 
 .image-editor-file-warning{margin:6px 0;padding:6px 8px;border-left:4px solid #a65300;background:#fff1d6;color:#4d2900}
+
+.image-editor-save-button{min-height:44px;padding:.45rem .9rem;border:0;border-radius:4px;background:#126da1;color:white;font:14px system-ui,sans-serif;cursor:pointer}.image-editor-save-button:focus-visible{outline:2px solid #126da1;outline-offset:2px}
