@@ -93,3 +93,12 @@ filename changed while it was open; choose the folder again in that case. Only
 one chooser can run at a time. Local desktop and emulated-phone account tests
 cover a stale filename, a valid folder choice, server synchronization and
 reopening the saved image in a fresh session. Physical touch remains unverified.
+
+When restoring an image fails because storage is temporarily unavailable, **Retry
+saved image** reopens it without refreshing the desktop. Scratch work asks for
+confirmation before retry, and if the unavailable original is `/Untitled.png`,
+the blank scratch defaults to `/Untitled-recovery.png`. Saving or opening another
+image clears the retry target. Local registered-account desktop and emulated-phone
+tests covered cancellation, retry, real resize/save, server sync, reopen and a
+separate scratch save that preserved the original. Physical touch and other
+failure types remain unverified.
