@@ -94,6 +94,13 @@ one chooser can run at a time. Local desktop and emulated-phone account tests
 cover a stale filename, a valid folder choice, server synchronization and
 reopening the saved image in a fresh session. Physical touch remains unverified.
 
+When a Save As write is still running, a newer filename entered in the open
+Save As field is retained for the next copy. The earlier copy uses its original
+name; the editor reports that the newer name was retained. Local registered-
+account desktop and phone-sized tests held the first write, changed the name,
+saved the second copy, synchronized both and reopened the first in a fresh
+browser. Physical touch remains unverified.
+
 When restoring an image fails because storage is temporarily unavailable, **Retry
 saved image** reopens it without refreshing the desktop. Scratch work asks for
 confirmation before retry, and if the unavailable original is `/Untitled.png`,
