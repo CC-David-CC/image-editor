@@ -68,3 +68,9 @@ overlays remain unverified.
 No third-party account or cloud feature was removed in this review. The native
 computer-upload path for annotations remains; direct My files annotation
 insertion without the intermediate gallery is a future usability improvement.
+
+If an image cannot be opened while a window is restored, the failed file is
+no longer associated with the welcome screen. The original file is untouched;
+choose another image or create a blank one. Local desktop and emulated-phone
+account tests cover invalid/missing images, creating and saving a blank image,
+server synchronization and refresh. Physical touch remains unverified.
