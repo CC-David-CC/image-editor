@@ -165,3 +165,12 @@ Local registered-account desktop and emulated-phone tests rejected a valid
 4500 × 4500 PNG before decoder access for both open and annotation, preserved
 an unsaved resize, saved/synced it and reopened it. PNG/JPEG/WebP resize/save
 and a watermark regression also passed locally. Physical touch is unverified.
+
+## Browser commands
+
+The signed-in desktop's in-page command registry exposes `inspect` for the
+current rendered image dimensions, save state and file warning. Inspection
+renders an image snapshot locally and can use substantial memory on large
+images. It does not save or expose image pixels, and it refuses to run while a
+file operation is in progress. Editing and saving still use the normal app
+controls. This is not a remote agent connection.
