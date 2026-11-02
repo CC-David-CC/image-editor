@@ -153,3 +153,15 @@ work remained unsaved, and saved successfully after loading. On the old build,
 the same held-load experiment did not reproduce the error because its Save
 control was disabled; the original narrower race was not reproduced in isolation.
 Physical phone behavior and every editing operation remain unverified.
+
+Before opening an image or selecting an annotation/watermark, the editor now
+checks PNG, JPEG and WebP dimensions from their headers against the existing
+20-megapixel limit before asking the browser to decode. The later decoded-size
+check remains. Headers that cannot be checked within the first MiB are refused,
+so unusual but valid files with very large metadata may require conversion
+elsewhere. This reduces, but does not eliminate, image-decoder memory risk;
+resize operations and all malformed image cases are not comprehensively bounded.
+Local registered-account desktop and emulated-phone tests rejected a valid
+4500 × 4500 PNG before decoder access for both open and annotation, preserved
+an unsaved resize, saved/synced it and reopened it. PNG/JPEG/WebP resize/save
+and a watermark regression also passed locally. Physical touch is unverified.
