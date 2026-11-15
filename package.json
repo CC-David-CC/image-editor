@@ -10,5 +10,8 @@
     "react-filerobot-image-editor": "5.0.0",
     "react-konva": "18.2.10",
     "styled-components": "5.3.11"
+  },
+  "scripts": {
+    "test:reference": "node --test --test-reporter=tap tests/reference/*.test.mjs"
   }
 }

@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict';import {checkImageDimensions} from '../apps/system/image-editor/image-dimensions.mjs';
+import assert from 'node:assert/strict';import {checkImageDimensions} from "../../image-dimensions.mjs";
 function png(w,h){const b=new Uint8Array(24),v=new DataView(b.buffer);b.set([137,80,78,71,13,10,26,10]);v.setUint32(8,13);b.set([73,72,68,82],12);v.setUint32(16,w);v.setUint32(20,h);return b}
 function jpeg(w,h){const b=new Uint8Array([255,216,255,192,0,8,8,0,0,0,0,1]);new DataView(b.buffer).setUint16(7,h);new DataView(b.buffer).setUint16(9,w);return b}
 function webp(w,h,size){const b=new Uint8Array(size+20),v=new DataView(b.buffer),put=(p,s)=>[...s].forEach((x,i)=>b[p+i]=x.charCodeAt(0));put(0,'RIFF');v.setUint32(4,b.length-8,true);put(8,'WEBP');put(12,'VP8 ');v.setUint32(16,size,true);b.set([0,0,0,157,1,42],20);v.setUint16(26,w,true);v.setUint16(28,h,true);return b}
